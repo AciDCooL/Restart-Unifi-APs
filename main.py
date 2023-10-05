@@ -67,17 +67,23 @@ if __name__ == "__main__":
     parser.add_argument(
         "-c",
         "--controller",
-        default="https://unifi.acidflix.eu:8443",
+        default="http://localhost:8443",
         help="UniFi controller URL (default http://localhost:8443)",
     )
     parser.add_argument(
-        "-u", "--user", default="svc_rebootap", help="Admin username (default admin)"
+        "-u", "--user", default="admin", help="Admin username (default admin)"
     )
     parser.add_argument(
         "-p",
         "--password",
-        default="yitw67",
+        default="password",
         help="Admin password (default unifi)",
+    )
+    parser.add_argument(
+        "-t",
+        "--timetosleep",
+        default=120,
+        help="Time to sleep between APs (default: 120 seconds)",
     )
     parser.add_argument("-s", "--soft", help="Do a soft reboot", action="store_true")
     parser.add_argument("-v", help="Verbose output", action="store_true")
